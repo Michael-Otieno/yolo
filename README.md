@@ -9,7 +9,9 @@ Install the docker engine here:
 ## How to launch the application 
 
 
-![Alt text](image.png)
+![Alt text](2024-12-15_19-20.png)
+
+
 
 ## How to run the app
 Use vagrant up --provison command
