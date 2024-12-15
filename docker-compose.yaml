@@ -2,7 +2,10 @@ services:
 
   #Builds the frontend Docker image and creates the frontend microservice
   client:
-    image: motieno205/client:v1.2.0
+    image: motieno205/client-app:v1.5.0
+    build:
+      context: ./client
+      dockerfile: Dockerfile
     container_name: client
     ports:
       - "3000:3000"
@@ -13,9 +16,10 @@ services:
 
   #Builds the backend Docker image and creates the backend microservice
   backend:
-    image: motieno205/backend:v1.2.0
+    image: motieno205/backend:v1.2.1
     build:
       context: ./backend
+      dockerfile: Dockerfile
     container_name: backend
     restart: always
     ports:
@@ -34,9 +38,9 @@ services:
     container_name: mongodb
     ports:
       - "27017:27017"
-    # environment:
-    #   MONGO_INITDB_ROOT_USERNAME: admin
-    #   MONGO_INITDB_ROOT_PASSWORD: supersecret
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: supersecret
 
     networks:
       - app-network
