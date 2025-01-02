@@ -1,16 +1,7 @@
 ---
-- name: Pull image from repository
-  docker_image:
-    name: brianbwire/brian-yolo-backend:v1.0.0
-    source: pull
-
-- name: Create Node.js Backend Container
-  docker_container:
-    name: brian-yolo-backend
-    image: brianbwire/brian-yolo-backend:v1.0.0
-    networks:
-      - name: app-net
+- name: Pull docker image and start container
+  community.docker.docker_container:
+    name: backend
+    image: motieno205/backend:v1.2.1
     ports:
       - "5000:5000"
-    command: "npm start"
-  become: yes
