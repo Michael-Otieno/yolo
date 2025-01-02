@@ -1,0 +1,14 @@
+# pull image from repository and run container
+
+---
+
+- name: Pull docker image and start container
+  community.docker.docker_container:
+    name: client
+    image: motieno205/client-app:v1.5.0
+    ports:
+      - "3000:3000"
+
+
+
+    
