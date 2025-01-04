@@ -28,13 +28,19 @@
         state: present
         update_cache: yes
 
-# - name: Create Docker network
-#   docker_network:
-#     name: app-network
-#     driver: bridge
-#   become: yes
+    - name: Create Docker network
+      community.docker.docker_network:
+        name: app-network
+        driver: bridge
+      # become: yes
+
+    - name: Create Docker network
+      community.docker.docker_volume:
+        name: mongo-data
+        driver: local
+
   roles: 
     - frontend-deployment
-    # - setup-mongodb   
-    # - backend-deployment
+    - setup-mongodb   
+    - backend-deployment
     
