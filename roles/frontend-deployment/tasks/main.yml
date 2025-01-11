@@ -9,6 +9,9 @@
     ports:
       - "3000:3000"
 
+    networks:
+      - name: app-network
+
 
 
     
