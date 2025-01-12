@@ -5,3 +5,6 @@
     image: motieno205/backend:v1.2.1
     ports:
       - "5000:5000"
+
+    networks:
+      - name: app-network
