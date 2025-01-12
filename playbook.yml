@@ -28,19 +28,22 @@
         state: present
         update_cache: yes
 
-    - name: Create Docker network
-      community.docker.docker_network:
-        name: app-network
-        driver: bridge
-      # become: yes
+    - name: Clone the application code
+      git:
+        repo: 'https://github.com/Michael-Otieno/yolo.git'
+        dest: /home/vagrant/app
+        version: master  
 
-    - name: Create Docker network
-      community.docker.docker_volume:
-        name: mongo-data
-        driver: local
+    - name: Change to the application directory and run docker-compose up
+      shell: |
+        cd /home/vagrant/app && docker compose up -d
+      args:
+        chdir: /home/vagrant/app  
+      
 
-  roles: 
-    - frontend-deployment
-    - setup-mongodb   
-    - backend-deployment
+
+  # roles: 
+  #   - frontend-deployment
+  #   - backend-deployment
+  #   - setup-mongodb   
     
