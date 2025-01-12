@@ -47,6 +47,8 @@ services:
       
     volumes:
         - mongo-volume:/data/db
+
+    command: --auth
    
 
 #Creates the network infrastructure necessary for the containers to communicate with each other
