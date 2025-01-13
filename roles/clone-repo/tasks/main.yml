@@ -1,0 +1,12 @@
+---
+- name: Clone the application code
+  git:
+    repo: "https://github.com/Michael-Otieno/yolo.git"
+    dest: /home/vagrant/app
+    version: "{{version}}"
+
+- name: Change to the application directory and run docker-compose up
+  shell: |
+    cd /home/vagrant/app && docker compose up -d
+  args:
+    chdir: /home/vagrant/app
