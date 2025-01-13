@@ -14,36 +14,7 @@
           - software-properties-common
         state: present
 
-    - name: Add Docker's official GPG key
-      shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-
-    - name: Add Docker repository
-      apt_repository:
-        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
-        state: present
-
-    - name: Install Docker CE
-      apt:
-        name: docker-ce
-        state: present
-        update_cache: yes
-
-    - name: Clone the application code
-      git:
-        repo: 'https://github.com/Michael-Otieno/yolo.git'
-        dest: /home/vagrant/app
-        version: master  
-
-    - name: Change to the application directory and run docker-compose up
-      shell: |
-        cd /home/vagrant/app && docker compose up -d
-      args:
-        chdir: /home/vagrant/app  
-      
-
-
-  # roles: 
-  #   - frontend-deployment
-  #   - backend-deployment
-  #   - setup-mongodb   
+  roles: 
+    - install-docker
+    - clone-repo
     
