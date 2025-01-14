@@ -8,13 +8,8 @@ This project involved the containerization and deployment of a full-stack yolo a
 
 
 ## How to run the app
-cd into the 
-Use ```vagrant up --provison``` command for the first time
 
-Subsequent running of the project, use ansib
-Git workflow used to achieve the task
-
-1. Fork the repository on github.
+1. Fork the repository on Git Hub.
 2. Clone the repository into your local machine.
 
     ```
@@ -24,11 +19,14 @@ Git workflow used to achieve the task
    ```
    cd yolo
    ```
-4. Use ```vagrant up --provison``` command for the first time
+4. Use the command for the first time running the application
+   ```
+   vagrant up --provison
+   ```
 
-5. Subsequent running of the project, use:
+6. Subsequent running of the project, use:
 
-```
-ansible-playbook playbook.yml
-```
+    ```
+    ansible-playbook playbook.yml
+    ```
 
