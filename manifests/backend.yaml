@@ -21,7 +21,8 @@ spec:
         - containerPort: 5000
         env:
         - name: MONGODB_URL
-          value: "mongodb://mongo:27017/yolomy" 
+          value: mongodb://admin:supersecret@mongodb:27017/yolomy?authSource=admin
+          # value: "mongodb://mongo:27017/yolomy" 
         
 
 
