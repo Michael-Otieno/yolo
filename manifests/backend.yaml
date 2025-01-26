@@ -17,29 +17,12 @@ spec:
       containers:
       - name: backend-app
         image: motieno205/backend:v1.2.1
-        resources:
-          requests:
-            memory: "32Mi"
-            cpu: "100m"
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 5000
-        # env:
-        #   - name: MONGO_USERNAME
-        #     valueFrom:
-        #     secretKeyRef:
-        #       name: mongodb-credentials
-        #       key: username
-        #   - name: MONGO_PASSWORD
-        #     valueFrom:
-        #     secretKeyRef:
-        #       name: mongodb-credentials
-        #       key: password
-        #   - name: MONGODB_URI
-        #     value: "mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb:27017/yolomy?authSource=admin"
-              
+        env:
+        - name: MONGODB_URL
+          value: "mongodb://mongo:27017/yolomy" 
+        
 
 
 ---
