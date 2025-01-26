@@ -26,6 +26,20 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 5000
+        # env:
+        #   - name: MONGO_USERNAME
+        #     valueFrom:
+        #     secretKeyRef:
+        #       name: mongodb-credentials
+        #       key: username
+        #   - name: MONGO_PASSWORD
+        #     valueFrom:
+        #     secretKeyRef:
+        #       name: mongodb-credentials
+        #       key: password
+        #   - name: MONGODB_URI
+        #     value: "mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb:27017/yolomy?authSource=admin"
+              
 
 
 ---
