@@ -11,6 +11,7 @@ spec:
   clusterIP: None
   selector:
     app: mongo
+  type: ClusterIP
 
     
 ---
