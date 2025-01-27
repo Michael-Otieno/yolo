@@ -49,9 +49,8 @@ minikube start --driver=virtualbox
 7. To view frontend application on the browser, run the command below on terminal:
 
     ```
-    kubectl get svc
+    minikube service client-app-service
     ```
-    view cluster-ip for  ```client-app-service```
 
 
 
