@@ -52,3 +52,9 @@ minikube start --driver=virtualbox
     kubectl get svc
     ```
     view cluster-ip for  ```client-app-service```
+
+
+
+
+8. Deployed url
+- http://34.125.158.162/
